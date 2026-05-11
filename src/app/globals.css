@@ -1,25 +1,37 @@
-@import "tailwindcss";
+@import url('https://api.fontshare.com/v2/css?f[]=nippo@400,500,700,900&f[]=satoshi@300,400,500,700,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* 1. Definiamo le variabili per i nostri font */
-:root {
-  --font-nippo: 'Nippo', sans-serif;
-  --font-satoshi: 'Satoshi', sans-serif;
+@layer base {
+  :root {
+    --color-hanzo-yellow: #FDE047;
+    --color-hanzo-black: #050505;
+    --color-hanzo-red: #C52121;
+  }
+
+  body {
+    background-color: var(--color-hanzo-black);
+    color: white;
+    font-family: "Satoshi", sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Nippo", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+    font-weight: 900;
+  }
 }
 
-/* 2. Reset totale del background */
-body {
-  background-color: #000000;
-  color: #ffffff;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* Evita scorrimenti laterali fastidiosi */
+.text-stroke-black {
+  -webkit-text-stroke: 2px var(--color-hanzo-black);
+  color: transparent;
 }
 
-/* 3. Creiamo delle classi speciali che potremo usare ovunque */
-.font-nippo {
-  font-family: var(--font-nippo) !important;
-}
-
-.font-satoshi {
-  font-family: var(--font-satoshi) !important;
-}
+.bg-hanzo-yellow { background-color: var(--color-hanzo-yellow); }
+.text-hanzo-yellow { color: var(--color-hanzo-yellow); }
+.text-hanzo-black { color: var(--color-hanzo-black); }
+.bg-hanzo-red { background-color: var(--color-hanzo-red); }
+.border-hanzo-red { border-color: var(--color-hanzo-red); }
+.vertical-rl { writing-mode: vertical-rl; }

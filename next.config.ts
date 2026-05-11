@@ -1,8 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  reactCompiler: true,
+  reactStrictMode: false, // <-- QUESTA È LA RIGA MAGICA
 };
 
 export default nextConfig;
